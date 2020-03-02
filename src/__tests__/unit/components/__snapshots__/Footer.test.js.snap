@@ -1,7 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer renders 1`] = `
-
 <footer class="footer text-muted">
   <div class="container">
     <div class="row">
@@ -21,5 +20,4 @@ exports[`Footer renders 1`] = `
     </div>
   </div>
 </footer>
-
 `;
