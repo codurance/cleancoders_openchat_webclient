@@ -12,14 +12,12 @@ export default (props) => (
       </p>
       <p className='card-text'>{props.user.about}</p>
       {!props.isFollowee
-        ? (<button
-          className='card-link btn btn-sm btn-primary'
-          onClick={props.onFollow}
-          >
-          <i className='fa fa-plus' /> Follow</button>
+        ? (
+          <button className='card-link btn btn-sm btn-primary' onClick={props.onFollow}>
+            <i className='fa fa-plus' /> Follow
+          </button>
         )
-        : (<span className='border rounded p-2 small'>Already following</span>)
-      }
+        : (<span className='border rounded p-2 small'>Already following</span>)}
     </div>
   </div>
 )

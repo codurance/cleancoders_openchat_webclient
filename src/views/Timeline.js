@@ -37,10 +37,11 @@ class Timeline extends Component {
     if (this.isOwnTimeline()) return null
 
     return this.state.showFollow
-    ? (<button className='btn btn-md btn-primary follow' onClick={() => this.follow()}>
-      <i className='fa fa-plus' /> Follow
-    </button>)
-    : 'Following'
+      ? (
+        <button className='btn btn-md btn-primary follow' onClick={() => this.follow()}>
+          <i className='fa fa-plus' /> Follow
+        </button>)
+      : 'Following'
   }
 
   render () {
@@ -49,15 +50,13 @@ class Timeline extends Component {
         <h2>
           {this.isOwnTimeline()
             ? `Your timeline, ${this.state.user.name}`
-            : `${this.state.user.name}'s timeline`
-          }
+            : `${this.state.user.name}'s timeline`}
         </h2>
         <div className='row'>
           <div className='col-sm-10'>
             {this.isOwnTimeline()
-              ? <Link to={`/wall/`}>See wall</Link>
-              : <Link to={`/wall/${this.state.user.id}`}>See {this.state.user.name}'s wall</Link>
-            }
+              ? <Link to='/wall/'>See wall</Link>
+              : <Link to={`/wall/${this.state.user.id}`}>See {this.state.user.name}'s wall</Link>}
           </div>
           <div className='col-sm-2 text-right'>
             {this.followButton()}

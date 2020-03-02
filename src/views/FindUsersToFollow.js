@@ -29,12 +29,12 @@ class FindUsersToFollow extends Component {
 
     return (
       <div className='container'>
-        { this.noUsersToFollow()
+        {this.noUsersToFollow()
           ? <h4 className='m-0 alert alert-secondary p-4 text-center'>There are no users to follow.</h4>
-          : (<div className='row justify-content-md-center users-to-follow'>
-            {displayUsers}
-          </div>)
-        }
+          : (
+            <div className='row justify-content-md-center users-to-follow'>
+              {displayUsers}
+            </div>)}
       </div>
     )
   }

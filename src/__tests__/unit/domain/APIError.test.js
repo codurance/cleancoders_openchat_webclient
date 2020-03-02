@@ -12,6 +12,6 @@ describe('APIError', () => {
     const error = new APIError(response)
 
     expect(error.name).toBe(response.data)
-    expect(error.message).toBe(`POST /users`)
+    expect(error.message).toBe('POST /users')
   })
 })

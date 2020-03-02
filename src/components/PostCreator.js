@@ -30,9 +30,10 @@ class PostCreator extends Component {
   render () {
     return (
       <div className='container'>
-        <form className='bg-light border rounded'
+        <form
+          className='bg-light border rounded'
           onSubmit={this.handleSubmit.bind(this)}
-          >
+        >
           <div className='row align-items-center justify-content-md-center m-1'>
             <div className='col col-lg-10 col-sm-12'>
               <label htmlFor='createPost' className='sr-only'>Create a Post</label>

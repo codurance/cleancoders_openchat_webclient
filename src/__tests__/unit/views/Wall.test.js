@@ -61,7 +61,7 @@ describe('Wall', () => {
           id: anotherUser.id
         }
       }
-      wrapper = shallow(<Wall />, { context }).setProps({match})
+      wrapper = shallow(<Wall />, { context }).setProps({ match })
       await flushPromises()
       wrapper.update()
     })

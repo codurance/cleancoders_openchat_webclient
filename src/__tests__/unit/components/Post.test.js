@@ -38,7 +38,7 @@ describe('Post', () => {
     it('shows wall link', () => {
       const link = wrapper.find(Link)
 
-      expect(link.prop('to')).toEqual(`/wall`)
+      expect(link.prop('to')).toEqual('/wall')
     })
 
     it('shows post data', () => {

@@ -38,10 +38,11 @@ class Wall extends Component {
     if (this.isOwnWall()) return null
 
     return this.state.showFollow
-    ? (<button className='btn btn-md btn-primary follow' onClick={() => this.follow()}>
-      <i className='fa fa-plus' /> Follow
-    </button>)
-    : 'Following'
+      ? (
+        <button className='btn btn-md btn-primary follow' onClick={() => this.follow()}>
+          <i className='fa fa-plus' /> Follow
+        </button>)
+      : 'Following'
   }
 
   render () {
@@ -50,15 +51,13 @@ class Wall extends Component {
         <h2>
           {this.isOwnWall()
             ? `Your wall, ${this.state.user.name}`
-            : `${this.state.user.name}'s wall`
-          }
+            : `${this.state.user.name}'s wall`}
         </h2>
         <div className='row'>
           <div className='col-sm-10'>
             {this.isOwnWall()
-              ? <Link to={`/timeline/`}>See timeline</Link>
-              : <Link to={`/timeline/${this.state.user.id}`}>See {this.state.user.name}'s timeline</Link>
-            }
+              ? <Link to='/timeline/'>See timeline</Link>
+              : <Link to={`/timeline/${this.state.user.id}`}>See {this.state.user.name}'s timeline</Link>}
           </div>
           <div className='col-sm-2 text-right'>
             {this.followButton()}
@@ -69,8 +68,7 @@ class Wall extends Component {
           <div className='row'>
             <PostCreator />
           </div>)
-            : null
-        }
+          : null}
         {this.list()}
       </div>
     )

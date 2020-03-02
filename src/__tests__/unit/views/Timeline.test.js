@@ -56,7 +56,7 @@ describe('Timeline', () => {
           id: anotherUser.id
         }
       }
-      wrapper = shallow(<Timeline />, { context }).setProps({match})
+      wrapper = shallow(<Timeline />, { context }).setProps({ match })
       await flushPromises()
       wrapper.update()
     })

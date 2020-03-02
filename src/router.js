@@ -8,16 +8,19 @@ import FindUsersToFollow from 'views/FindUsersToFollow'
 import userService from 'services/User'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={props => (
-    userService.user ? (
-      <Component {...props} />
-    ) : (
-      <Redirect to={{
-        pathname: '/login',
-        state: { from: props.location }
-      }} />
-    )
-  )} />
+  <Route
+    {...rest} render={props => (
+      userService.user ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to={{
+          pathname: '/login',
+          state: { from: props.location }
+        }}
+        />
+      )
+    )}
+  />
 )
 
 class Router extends Component {
@@ -30,14 +33,16 @@ class Router extends Component {
         <PrivateRoute exact path='/timeline' component={Timeline} />
         <PrivateRoute path='/timeline/:id' component={Timeline} />
         <PrivateRoute path='/findUsers' component={FindUsersToFollow} />
-        <Route exact path='/login' render={() => userService.user
-          ? <Redirect to='/' />
-          : <Login />
-        } />
-        <Route exact path='/register' render={() => userService.user
-          ? <Redirect to='/' />
-          : <Register />
-        } />
+        <Route
+          exact path='/login' render={() => userService.user
+            ? <Redirect to='/' />
+            : <Login />}
+        />
+        <Route
+          exact path='/register' render={() => userService.user
+            ? <Redirect to='/' />
+            : <Register />}
+        />
       </Switch>
     )
   }

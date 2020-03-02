@@ -9,14 +9,9 @@ const Post = ({ post, user }) => {
   return (
     <div className='post media my-3 border rounded p-4'>
       <div className='media-body'>
-        <p className='mt-0 mb-1 post-header'>{isOwnPost
-              ? <Link to='/wall'>You</Link>
-              : <Link to={`/wall/${user.id}`}>{user.name}</Link>
-            } - <TimeAgo
-              datetime={post.dateTime}
-              locale='en_UK'
-              live={false}
-                />
+        <p className='mt-0 mb-1 post-header'>
+          {isOwnPost ? <Link to='/wall'>You</Link> : <Link to={`/wall/${user.id}`}>{user.name}</Link>}
+          - <TimeAgo datetime={post.dateTime} locale='en_UK' live={false} />
         </p>
         <span className='h5 post-text'>{post.text}</span>
       </div>
